@@ -42,6 +42,12 @@ pipeline {
                 bat '".venv\\Scripts\\python.exe" -m pytest -v'
             }
         }
+        stage('Build Docker Image') {
+            steps {
+                bat 'docker build -t shmc:latest .'
+            }
+        }
+
     }
 
     post {

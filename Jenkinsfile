@@ -11,8 +11,8 @@ pipeline {
         stage('Verify Environment') {
             steps {
                 echo 'SHMC CI pipeline started successfully.'
-                sh 'python3 --version'
-                sh 'git --version'
+                bat 'python3 --version'
+                bat 'git --version'
             }
         }
     }

@@ -1,21 +1,10 @@
 
-pipeline {
-    agent any
+stage('Verify Environment') {
+    steps {
+        echo 'SHMC CI pipeline started successfully.'
 
-    stages {
-        stage('Checkout') {
-            steps {
-                echo 'Source code checkout configured through Jenkins SCM.'
-            }
-        }
-
-        stage('Verify Environment') {
-            steps {
-                echo 'SHMC CI pipeline started successfully.'
-                bat 'python --version'
-                bat 'git --version'
-                bat 'docker --version'
-            }
-        }
+        bat '"C:\\Users\\hp\\AppData\\Local\\Programs\\Python\\Python311\\python.exe" --version'
+        bat 'git --version'
+        bat 'docker --version'
     }
 }

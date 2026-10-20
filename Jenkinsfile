@@ -1,10 +1,16 @@
 
-stage('Verify Environment') {
-    steps {
-        echo 'SHMC CI pipeline started successfully.'
+pipeline {
+    agent any
 
-        bat '"C:\\Users\\hp\\AppData\\Local\\Programs\\Python\\Python311\\python.exe" --version'
-        bat 'git --version'
-        bat 'docker --version'
+    stages {
+        stage('Verify Environment') {
+            steps {
+                echo 'SHMC CI pipeline started successfully.'
+
+                bat '"C:\\Users\\hp\\AppData\\Local\\Programs\\Python\\Python311\\python.exe" --version'
+                bat 'git --version'
+                bat 'docker --version'
+            }
+        }
     }
 }
